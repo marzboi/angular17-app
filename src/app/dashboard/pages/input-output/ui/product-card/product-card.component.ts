@@ -5,6 +5,7 @@ import {
   EventEmitter,
   Input,
   Output,
+  effect,
   input,
   output,
 } from '@angular/core';
@@ -29,4 +30,8 @@ export class ProductCardComponent {
   public incrementQuantity(): void {
     this.onIncrementQuantity.emit(this.product().quantity + 1);
   }
+
+  public loginEffect = effect(() => {
+    console.log(this.product().name);
+  });
 }
