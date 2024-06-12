@@ -78,7 +78,11 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: (route) => {
+      console.error(route);
+
+      return '/dashboard/material';
+    },
     pathMatch: 'full',
   },
 ];
